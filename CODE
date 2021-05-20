@@ -1,0 +1,17 @@
+```
+with open('/dsa/data/all_datasets/wine-quality/winequality-red.csv') as file:
+    df = pd.read_csv(file, delimiter=";")
+    # if wine quality is less than 6, assign the value "bad".
+    # if greater than 6, assign "good". 
+    # 6 is the most popular value by a lot in this set, so 
+    # we are going to assign it a unique value. We will call 
+    # this "normal" as it is in the middle of the distribution.
+    
+    vals_to_replace = {3:'bad', 4:'bad', 5:'bad', 6:'okay', 7:'good', 8:'good',9:'good'}
+    df['quality'] = df['quality'].map(vals_to_replace)
+    
+# data = pd.DataFrame(data=df.data) # create frame of input data
+# target = pd.DataFrame(data=df.target) # create frame of target data
+
+df.head()
+```
